@@ -37,6 +37,9 @@ export class CreateAccountPage extends BasePage{
         this.createAccountButton().click()
     }
     assertPasswordError(){
-        this.passworErroMessage().should('contain', 'Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.')
+        this.passworErroMessage().should('contain', 'Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored.').should('be.visible')
+    }
+    passowrdMatchError(){
+        cy.contains('Please enter the same value again.').should('be.visible')
     }
 }

@@ -15,5 +15,6 @@ export class BasePage {
     }
     selectLoginAccount(){
         this.signInButton().click()
+        cy.url().should('contain','https://magento.softwaretestingboard.com/customer/account/login' )
     }
 }
